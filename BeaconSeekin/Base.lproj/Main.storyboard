@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Beacon Seekin-->
         <scene sceneID="eCJ-jO-pVn">
             <objects>
                 <tableViewController id="98N-E4-Nz3" customClass="MainViewController" customModule="BeaconSeekin" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="98N-E4-Nz3" id="4BR-cc-m7Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="0R3-ye-Ery">
+                    <navigationItem key="navigationItem" title="Beacon Seekin" id="0R3-ye-Ery">
                         <barButtonItem key="rightBarButtonItem" title="Start" style="plain" id="smN-0f-TFd">
                             <connections>
                                 <action selector="toggleRunningWithSender:" destination="98N-E4-Nz3" id="IfR-iH-NtT"/>

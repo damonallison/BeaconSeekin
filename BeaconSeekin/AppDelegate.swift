@@ -12,13 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var mainVC: UINavigationController?
+    
     var shouldWakeupLocationServices = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if options != nil && options![UIApplicationLaunchOptionsKey.location] != nil {
+
+        if launchOptions != nil && launchOptions![UIApplicationLaunchOptionsKey.location] != nil {
             self.shouldWakeupLocationServices = true
         }
+
+        // Register the type of notification interactions the app supports.
+        // https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html
+        
+        let settings = UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+
         return true
     }
 
@@ -37,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
+        NSLog("applicationDidBecomeActive")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
