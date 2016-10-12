@@ -35,6 +35,15 @@ class RegionMonitor : NSObject, CLLocationManagerDelegate {
                                 identifier: self.beaconIdentifier);
         region.notifyOnEntry = true
         region.notifyOnExit = true
+
+        //
+        // When `notifyEntryStateOnDisplay = true`
+        // CLLocationManager will send beacon callbacks when the user
+        // turns on the display and the device is already within the region. These
+        // notifications are sent when the *display* turns on, regardless if your
+        // app is running or not. If your app is *not* running, it will be launched
+        // in the background so that it can handle the notifications.
+        //
         region.notifyEntryStateOnDisplay = true
         
         self.locationManager = CLLocationManager()
